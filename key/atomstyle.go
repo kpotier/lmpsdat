@@ -53,6 +53,7 @@ func (a atomStyleFull) Decode(f []string) (id int, atom *Atom, err error) {
 		return
 	}
 
+	atom = &Atom{}
 	if atom.MolTag, err = strconv.Atoi(f[1]); err != nil {
 		err = fmt.Errorf("strconv.Atoi MolTag: %w", err)
 		return
@@ -123,6 +124,7 @@ func (a atomStyleAtomic) Decode(f []string) (id int, atom *Atom, err error) {
 		return
 	}
 
+	atom = &Atom{}
 	if atom.AtomType, err = strconv.Atoi(f[1]); err != nil {
 		err = fmt.Errorf("strconv.Atoi AtomType: %w", err)
 		return
